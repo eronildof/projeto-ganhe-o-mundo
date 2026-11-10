@@ -1,1 +1,1 @@
-# projeto-ganhe-o-mundo
+# projeto_ganhe_o_mundo
