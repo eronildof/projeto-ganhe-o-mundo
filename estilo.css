@@ -1,45 +1,70 @@
 
-/* Cabeçalho */
+/* cabeçalho pasta (long.html)*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 .container {
     width: 100%;
     min-height: 60px;
+    height: auto;
     background-color: rgb(147, 21, 21);
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
-    padding: 8px 20px;
+    align-items: center;
+    padding: 8px 15px;
     gap: 10px;
 }
 
 .container img {
-    width: 80px;
-    height: 45px;
-    object-fit: cover;
-    border-radius: 4px;
+    width: auto;
+    max-width: 110px;
+    height: 44px;
+    object-fit: contain;
+    padding: 0;
+    margin-right: 10px;
+    display: block;
 }
 
 .container h1 {
     margin-right: auto;
     font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .container ul {
     display: flex;
     flex-wrap: wrap;
     list-style-type: none;
-    gap: 4px;
+    justify-content: center;
+}
+
+.container p {
+    font-size: 20px;
+    margin: 0px 10px;
 }
 
 .container li {
-    font-size: 16px;
+    display: inline;
+    font-size: 18px;
+    list-style-type: none;
 }
 
 .container li a {
     text-decoration: none;
-    padding: 12px 16px;
+    padding: 15px 20px;
     display: inline-block;
-    transition: background 0.3s, color 0.3s;
-    border-radius: 4px;
+    transition: background .3s;
 }
 
 .container li a:hover {
@@ -47,18 +72,16 @@
     background-color: rgba(248, 205, 12, 0.852);
 }
 
-/* Hero (Página Inicial) */
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1920&q=80') no-repeat center center;
-    background-size: cover;
-    min-height: calc(100vh - 120px);
+    /* Utilizando uma imagem de alta qualidade da Sagrada Família via Unsplash */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+    min-height: calc(100vh - 60px);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: #fff;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
 .hero-content h1 {
@@ -68,9 +91,9 @@
 
 .hero-content h3 {
     font-size: clamp(1.2rem, 3vw, 2rem);
-    text-align: center;
-    margin-bottom: 8px;
+    text-align: left;
 }
+/*fim main*/
 
 /* Rodapé */
 footer {
@@ -79,38 +102,45 @@ footer {
     background-color: rgb(147, 21, 21);
     color: #fff;
     font-size: 0.9rem;
-    min-height: 60px;
+    min-height: 40px;
+    width: 100%;
 }
 
-/* Fundo e estrutura geral das páginas internas */
+/* =========================================================
+   ESTILO UNIFICADO E RESPONSIVO PARA AS PÁGINAS INTERNAS
+   (Destinos, Culinária, História e Cultura)
+   ========================================================= */
+
 .destinos,
 #culinaria,
 .historia,
 .cultura {
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.72)),
-        url("img/barcelona (1).jpg") no-repeat center center;
+    background-image: url("img/barcelona\ \(1\).jpg");
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     width: 100%;
-    min-height: calc(100vh - 120px);
+    min-height: 100vh;
     display: block;
-    padding: 30px 5%;
+    padding: 20px 5%;
 }
 
 .destinos h1,
 #culinaria h1,
 .historia h1,
 .cultura h1 {
-    margin: 10px 0 30px 0;
-    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    margin: 20px 0;
+    border-radius: 15px;
     text-align: left;
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
 }
 
 .destinos h2,
 #culinaria h2,
 .cultura h2 {
     text-align: left;
-    margin: 20px 0 12px 0;
-    font-size: clamp(1.25rem, 2.5vw, 1.6rem);
+    margin: 20px 0 10px 0;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
 }
 
 .destinos p,
@@ -118,8 +148,9 @@ footer {
 .historia p,
 .cultura p {
     text-align: left;
-    font-size: clamp(1rem, 1.8vw, 1.15rem);
-    line-height: 1.6;
+    margin: 10px 0;
+    font-size: clamp(16px, 2vw, 20px);
+    line-height: 1.5;
 }
 
 .destinos hr,
@@ -128,83 +159,82 @@ footer {
 .cultura hr {
     width: 100%;
     margin: 25px 0;
-    border: 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Blocos de conteúdo (Texto + Imagem lado a lado no PC) */
+/* Containers de conteúdo (Texto + Imagem lado a lado no PC) */
 .destinos1, .destinos2, .destinos3,
 .culinaria1, .culinaria2, .culinaria3,
-.cultura1, .cultura2, .cultura3,
-.historia1 {
+.historia1,
+.cultura1, .cultura2, .cultura3 {
     width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
-    background-color: rgba(0, 0, 0, 0.45);
-    padding: 20px;
-    border-radius: 15px;
+    gap: 30px;
     margin-bottom: 20px;
+    border-radius: 15px;
 }
 
-/* Caixa de texto */
-.um, .tres, .cinco,
-#um, #tres, #cinco {
-    flex: 1 1 60%;
+/* Coluna de texto ocupa o espaço restante */
+.destinos1 > p:first-of-type, .destinos2 > p:first-of-type, .destinos3 > p:first-of-type,
+.culinaria1 > p:first-of-type, .culinaria2 > p:first-of-type, .culinaria3 > p:first-of-type,
+.historia1 > p:first-of-type,
+.cultura1 > p:first-of-type, .cultura2 > p:first-of-type, .cultura3 > p:first-of-type {
+    flex: 1;
 }
 
-/* Caixa da imagem */
-.dois, .quatro, .seis,
-#dois, #quatro, #seis {
-    flex: 1 1 35%;
-    max-width: 380px;
-    margin: 0;
+/* Containers das imagens */
+.destinos .dois, .destinos .quatro, .destinos3 .seis,
+#dois, #quatro, #seis,
+.historia1 .dois,
+.cultura1 .dois, .cultura2 .quatro, .cultura3 .seis {
+    width: 38%;
+    max-width: 420px;
+    min-width: 240px;
+    height: auto;
+    border-radius: 15px;
+    margin: 10px 0;
+    text-align: center;
+    flex-shrink: 0;
 }
 
-.dois img, .quatro img, .seis img,
-#dois img, #quatro img, #seis img {
+/* Imagens internas: sem corte e com proporção preservada */
+.destinos .dois img, .destinos2 .quatro img, .destinos3 .seis img,
+#dois img, #quatro img, #seis img,
+.cultura1 .dois img, .cultura2 img, .cultura3 .seis img,
+.historia1 .dois img {
     width: 100%;
     height: auto;
-    max-height: 280px;
-    object-fit: cover;
+    max-height: 360px;
+    object-fit: contain;
     border-radius: 15px;
     display: block;
+    margin: 0 auto;
 }
 
-.historia1 .dois img {
-    max-height: 360px;
+.historia .link {
+    margin-top: 20px;
 }
 
-.link {
-    margin-top: 15px;
-}
+/* =========================================================
+   MEDIA QUERIES (Tablets e Celulares)
+   ========================================================= */
 
-.link a {
-    display: inline-block;
-    padding: 10px 18px;
-    background-color: rgb(147, 21, 21);
-    border-radius: 8px;
-    text-decoration: none;
-    transition: background 0.3s, color 0.3s;
-}
-
-.link a:hover {
-    background-color: rgba(248, 205, 12, 0.852);
-    color: black;
-}
-
-/* ================= RESPONSIVIDADE ================= */
-
-/* Tablets e telas menores que 900px */
 @media (max-width: 900px) {
     .container {
-        justify-content: center;
+        flex-direction: column;
         text-align: center;
+        padding: 10px;
+    }
+
+    .container img {
+        margin-right: 0;
+        height: 40px;
     }
 
     .container h1 {
-        margin-right: 0;
+        margin: 5px 0;
     }
 
     .container ul {
@@ -212,47 +242,50 @@ footer {
         justify-content: center;
     }
 
-    .destinos1, .destinos2, .destinos3,
-    .culinaria1, .culinaria2, .culinaria3,
-    .cultura1, .cultura2, .cultura3,
-    .historia1 {
-        flex-direction: column;
-        align-items: stretch;
+    .container li a {
+        padding: 10px 12px;
+        font-size: 16px;
     }
 
-    .dois, .quatro, .seis,
-    #dois, #quatro, #seis {
+    .destinos1, .destinos2, .destinos3,
+    .culinaria1, .culinaria2, .culinaria3,
+    .historia1,
+    .cultura1, .cultura2, .cultura3 {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .destinos .dois, .destinos .quatro, .destinos3 .seis,
+    #dois, #quatro, #seis,
+    .historia1 .dois,
+    .cultura1 .dois, .cultura2 .quatro, .cultura3 .seis {
+        width: 100%;
         max-width: 100%;
+        min-width: unset;
+    }
+
+    .destinos .dois img, .destinos2 .quatro img, .destinos3 .seis img,
+    #dois img, #quatro img, #seis img,
+    .cultura1 .dois img, .cultura2 img, .cultura3 .seis img,
+    .historia1 .dois img {
+        width: 100%;
+        height: auto;
+        max-height: none;
+        object-fit: contain;
     }
 }
 
-/* Celulares menores que 520px */
-@media (max-width: 520px) {
-    .container {
-        padding: 10px 12px;
-    }
-
+@media (max-width: 480px) {
     .container li a {
-        padding: 8px 10px;
+        padding: 8px 8px;
         font-size: 14px;
     }
 
-    .destinos,
-    #culinaria,
-    .historia,
-    .cultura {
-        padding: 20px 14px;
-    }
-
-    .destinos1, .destinos2, .destinos3,
-    .culinaria1, .culinaria2, .culinaria3,
-    .cultura1, .cultura2, .cultura3,
-    .historia1 {
-        padding: 15px;
+    .hero-content h3 {
+        text-align: center;
     }
 }
-
-
 
 
 
